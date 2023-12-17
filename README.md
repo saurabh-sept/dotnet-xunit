@@ -17,6 +17,8 @@ It covers test requirements as listed on the (https://github.com/Terri14/Cocktai
 
 It covers extra necessary tests not listed in the requirements too.
 
+All tests are passing using `Github Acions`.
+
 ### API response validation
 API response schema validation for required properties is done using NewtonSoft.Json's attribute `[JsonProperty(Required = Required.Always)]`.
 Any response returning null values on not nullable fields fails.
@@ -24,13 +26,14 @@ However, some spec bugs have identified in the model as comments.
 
 ## Non functional tests
 
-### Following performance tests can done using `Apache JMeter` or `Gatling` or `Postman`.
+### Following performance tests can done
 - [Perform multiple GET requests on two endpoints, load can be gradually increased to specific level](Load Testing: Analyze the two endpoints performance under specific load)
 - [Continuously keep making GET requests for a long duration of few days](Soak Test)
+- Using `Apache JMeter` or `Gatling` or `Postman`.
 
-### Some Penetration testing `SQL Injection` can be done to find security vulnerabilitites in the code.
+### Some Penetration testing SQL Injection can be done to find security vulnerabilitites in the code.
 - [Query param `i=margarita` is obviously used in the SQL where clause in the code]
-(This can be tested by passing `SQL` conditions in query params: `i=margarita AND i=mojito order by 1,2`, things like this can be exploited and let give control of application behaviour to someone else)
+(This can be tested by passing `SQL Injection` conditions in query params: `i=margarita AND i=mojito order by 1,2`, things like this can be exploited and let give control of application behaviour to someone else)
 - [SQLMap](https://github.com/sqlmapproject/sqlmap), [Acunetix](https://www.acunetix.com/) are few tools which can be used to identify these vulnerabilities.
 
 
